@@ -14,10 +14,7 @@ users = [
 ]
 
 router.get('/', (_, res) => {
-  res.render('index', {
-    title: 'My Cool App',
-    user: 'Nerd'
-  })
+  res.render('index')
 })
 
 module.exports = router
