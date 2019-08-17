@@ -15,7 +15,7 @@
     "url": "git+https://github.com/DanteFragapane/project-2-starter.git"
   },
   "keywords": [],
-  "author": "Dante Fragapane",
+  "author": "Tony Romaniuk, Dante Fragapane, Richard Dimbo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/DanteFragapane/project-2-starterissues"
@@ -23,8 +23,8 @@
   "homepage": "https://github.com/DanteFragapane/project-2-starter#readme",
   "dependencies": {
     "dotenv": "8.0.0",
-    "ejs": "2.6.2",
     "express": "4.17.1",
+    "express-handlebars": "^3.1.0",
     "mysql": "2.17.1"
   },
   "devDependencies": {
