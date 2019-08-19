@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 3030
 app
   .engine('handlebars', exphbs({ defaultLayout: 'main' }))
   .set('view engine', 'handlebars')
+  .use(db)
   .use(cookieparser())
   // set a cookie
   .use(function (req, res, next) {
@@ -35,7 +36,6 @@ app
   .use(express.static(path.join(__dirname, 'public')))
   .use(htmlRoutes)
   .use(apiRoutes)
-  .use(db)
   .listen(PORT, () => {
     console.log(`
           oOOOOOo
