@@ -2,19 +2,10 @@ const express = require('express')
 
 const router = express.Router()
 
-users = [
-  {
-    name: 'Dante',
-    level: 1
-  },
-  {
-    name: 'Max',
-    level: 2
-  }
-]
+router.get('/setcookie', (_, res) => {})
 
 router.get('/', (_, res) => {
-  res.render('index')
+  npres.render('index', { cookie: _.cookies.cookieName })
 })
 
 module.exports = router
