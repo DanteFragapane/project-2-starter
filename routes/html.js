@@ -5,7 +5,7 @@ const router = express.Router()
 router.get('/setcookie', (_, res) => {})
 
 router.get('/', (_, res) => {
-  npres.render('index', { cookie: _.cookies.cookieName })
+  res.render('index', { cookie: _.cookies.cookieName })
 })
 
 module.exports = router

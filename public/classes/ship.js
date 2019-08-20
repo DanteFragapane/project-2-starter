@@ -1,4 +1,4 @@
-class Player {
+class Ship {
   constructor (name, stats = { health: 50, strength: 5, defense: 5 }) {
     this.name = name
     this.health = stats.health
@@ -6,9 +6,13 @@ class Player {
     this.defense = stats.defense
   }
 
+  get getHealth () {
+    return this.health
+  }
+
   takeDamage (amt) {
     this.health -= amt
   }
 }
 
-module.exports = Player
+module.exports = Ship
