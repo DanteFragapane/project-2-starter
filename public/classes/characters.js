@@ -7,6 +7,7 @@ class Character {
     this.intelligence = stats.intelligence
     this.wisdom = stats.wisdom
     this.charisma = stats.charisma
+    this.experience = 0
   }
 
   speak () {
