@@ -8,8 +8,8 @@ class Character {
     this.intelligence = stats.intelligence
     this.wisdom = stats.wisdom
     this.utility = stats.utility
-    this.energy = 10
-    this.health = 50
+    this.energy = 3
+    this.health = 8
     this.experience = 0
     this.level = 1
   }
