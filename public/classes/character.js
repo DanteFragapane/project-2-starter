@@ -8,7 +8,8 @@ class Character {
     this.intelligence = stats.intelligence
     this.wisdom = stats.wisdom
     this.utility = stats.utility
-    this.energy = 3
+    this.maxEnergy = 3
+    this.energy = this.maxEnergy
     this.health = 8
     this.experience = 0
     this.level = 1
@@ -41,6 +42,10 @@ class Character {
 
   levelUp () {
     this.level++
+    this.health++
+    if (this.level % 2 != 0) {
+      this.energy++
+    }
   }
 
   speak () {
