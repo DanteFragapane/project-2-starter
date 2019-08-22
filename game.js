@@ -5,7 +5,5 @@ const Machine = require('./public/classes/machine')
 
 const dante = new Human('Dante')
 
-console.log(dante)
-console.log(dante.scopeShot())
 dante.unlock('scopeShot')
-console.log(dante.scopeShot())
+console.log(dante.mervGrenade())
