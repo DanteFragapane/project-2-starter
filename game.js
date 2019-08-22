@@ -1,11 +1,11 @@
-const Ship = require('./public/classes/ship')
-const Chars = require('./public/classes/characters')
+const Alien = require('./public/classes/alien')
+const Bionic = require('./public/classes/bionic')
+const Human = require('./public/classes/human')
+const Machine = require('./public/classes/machine')
 
-const bionic = new Chars.Bionic('Dante', {
-  strength: 10,
-  constitution: 10,
-  dexterity: 10,
-  intelligence: 10,
-  widom: 10,
-  charisma: 10
-})
+const dante = new Human('Dante')
+
+console.log(dante)
+console.log(dante.scopeShot())
+dante.unlock('scopeShot')
+console.log(dante.scopeShot())
