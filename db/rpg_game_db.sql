@@ -48,6 +48,12 @@ energyCost INT(10),
 dmg_Heal INT(10),
 damMult FLOAT (10,2)
 );
+DROP TABLE IF EXISTS userName;
+CREATE TABLE userName(
+name VARCHAR(200) NOT NULL UNIQUE,
+password VARCHAR(255),
+email VARCHAR(255)
+);
 
 
 
