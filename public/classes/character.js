@@ -43,6 +43,7 @@ class Character {
   levelUp () {
     this.level++
     this.health++
+    this.experience += 300
     if (this.level % 2 != 0) {
       this.energy++
     }

@@ -1,5 +1,5 @@
 const Alien = require('./public/classes/alien')
-const Bionic = require('./public/classes/bionic')
+const Bionic = require('./public/classes/cyborg')
 const Human = require('./public/classes/human')
 const Machine = require('./public/classes/machine')
 
