@@ -1,8 +1,1 @@
-[
-  {
-    "level": 1,
-    "energy": 3,
-    "experience": 0,
-    "experiencePerKill": 150
-  }
-]
+[{"level":1,"hp":8,"energy":3,"experience":0,"experiencePerKill":150},{"level":2,"hp":9,"energy":3,"experience":300,"experiencePerKill":150},{"level":3,"hp":10,"energy":4,"experience":600,"experiencePerKill":300},{"level":4,"hp":11,"energy":4,"experience":900,"experiencePerKill":450},{"level":5,"hp":12,"energy":5,"experience":1200,"experiencePerKill":600},{"level":6,"hp":13,"energy":5,"experience":1500,"experiencePerKill":750},{"level":7,"hp":14,"energy":6,"experience":1800,"experiencePerKill":900},{"level":8,"hp":15,"energy":6,"experience":2100,"experiencePerKill":1050},{"level":9,"hp":16,"energy":7,"experience":2400,"experiencePerKill":1200},{"level":10,"hp":20,"energy":9,"experience":2700,"experiencePerKill":1350}]
