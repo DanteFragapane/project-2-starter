@@ -8,11 +8,14 @@ class Character {
     this.intelligence = stats.intelligence
     this.wisdom = stats.wisdom
     this.utility = stats.utility
+    this.level = 1
     this.maxEnergy = 3
     this.energy = this.maxEnergy
-    this.health = 8
+    this.maxHealth = 8
+    this.health = this.maxHealth
     this.experience = 0
-    this.level = 1
+
+    this.experiencePerKill = 150
   }
 
   increaseStat (stat, amt) {
@@ -32,7 +35,7 @@ class Character {
       case 'wisdom':
         this.wisdom += amt
         break
-      case 'charisma':
+      case 'utility':
         this.utility += amt
         break
       default:
@@ -43,14 +46,11 @@ class Character {
   levelUp () {
     this.level++
     this.health++
-    this.experience += 300
-    if (this.level % 2 != 0) {
+    if (this.level % 2 !== 0) {
       this.energy++
     }
-  }
-
-  speak () {
-    console.log('Hello!')
+    this.experience += 300
+    this.experiencePerKill = this.experience / 2
   }
 }
 
