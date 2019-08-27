@@ -4,7 +4,7 @@ const opts = process.env.JAWSDB_URL || {
   host: 'localhost',
   user: 'root',
   password: 'password',
-  database: 'chicken_chasers'
+  database: 'rpg_game_db'
 }
 
 const connection = mysql.createConnection(opts)
