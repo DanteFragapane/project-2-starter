@@ -1,7 +1,7 @@
 const Character = require('./character.js')
 
 class Alien extends Character.Character {
-  constructor (
+  constructor(
     name,
     stats = {
       strength: 2,
@@ -14,7 +14,7 @@ class Alien extends Character.Character {
   ) {
     super(name, stats)
     this.descriptions = {
-      forceWave: 'Default skill. Activates boot thrusters to kick the crap out of enemies.',
+      forceWave: 'Compresses the very air, projecting out a wave of energy that stuns and damages foes.',
       telekeneticProjectiles:
         'Default skill. Use the power of mind to manipulate physical matter and fire medium-sized objects at high speeds.',
       cognitiveShock:
@@ -27,11 +27,11 @@ class Alien extends Character.Character {
     }
   }
 
-  forceWave () {
+  forceWave() {
     return Character.getRandomInt(2, 4)
   }
 
-  telekeneticProjectiles () {
+  telekeneticProjectiles() {
     if (this.energy > 0) {
       this.energy--
       return Character.getRandomInt(3, 4)
@@ -39,7 +39,7 @@ class Alien extends Character.Character {
     return 0
   }
 
-  cognitiveShock () {
+  cognitiveShock() {
     if (this.energy > 1) {
       this.energy -= 2
       return Character.getRandomInt(1, 7)
@@ -47,7 +47,7 @@ class Alien extends Character.Character {
     return 0
   }
 
-  psiScream () {
+  psiScream() {
     if (this.energy > 2) {
       this.energy -= 3
       return (
@@ -60,7 +60,7 @@ class Alien extends Character.Character {
     return 0
   }
 
-  orbitalSingularity () {
+  orbitalSingularity() {
     if (this.energy > 5) {
       this.energy -= 6
       return 8 * (this.wisdom / 4)
@@ -68,7 +68,7 @@ class Alien extends Character.Character {
     return 0
   }
 
-  psychicRegen () {
+  psychicRegen() {
     if (this.energy > 2) {
       this.energy -= 3
       return -5 * (this.utility / 2)
