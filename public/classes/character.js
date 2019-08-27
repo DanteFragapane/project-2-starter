@@ -54,8 +54,8 @@ class Character {
   }
 
   decreaseHealth (amt) {
-    if (this.health >= amt) {
-      this.health -= amt
+    this.health -= amt
+    if (this.health <= 0) {
       return true
     }
     return false
