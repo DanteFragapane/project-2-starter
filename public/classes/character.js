@@ -45,9 +45,9 @@ class Character {
 
   levelUp () {
     this.level++
-    this.health++
+    this.maxEnergy++
     if (this.level % 2 !== 0) {
-      this.energy++
+      this.maxHealth++
     }
     this.experience += 300
     this.experiencePerKill = this.experience / 2
