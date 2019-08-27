@@ -52,6 +52,14 @@ class Character {
     this.experience += 300
     this.experiencePerKill = this.experience / 2
   }
+
+  decreaseHealth (amt) {
+    if (this.health >= amt) {
+      this.health -= amt
+      return true
+    }
+    return false
+  }
 }
 
 // Helper function for random integers
