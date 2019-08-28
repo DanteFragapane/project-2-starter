@@ -33,6 +33,26 @@ router
       )
     })
   })
+  .post('/user/login', (req, res) => {
+    req.connection.query('SELECT * FROM users WHERE username = ?', req.body.username, (err, data) => {
+      if (err) {
+        console.error(err)
+        return res.status(500).json({ ok: false })
+      }
+      // Do the compare
+      bcrypt.compare(req.body.userpword, data[0].userpword, (err, bool) => {
+        if (err) {
+          console.error(err)
+          return res.status(500).json({ ok: false })
+        }
+        if (bool) {
+          return res.status(200).send(true)
+        }
+        // FIXME: Find out what the unauthorized status code is!
+        return res.status(502).send(false)
+      })
+    })
+  })
   .post('/api/attack/:attackName', (req, res) => {
     console.log(req.attackName)
   })
