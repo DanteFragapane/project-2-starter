@@ -57,5 +57,21 @@ router
   .post('/api/attack/:attackName', (req, res) => {
     console.log(req.attackName)
   })
+  .post('/api/commitStats', (req, res) => {
+    req.connection.query(
+      'UPDATE users SET characterlevel = ? characterxp = ?',
+      [ req.body.characterlevel, req.body.characterxp ],
+      (err, data) => {
+        if (err) {
+          console.error(err)
+          return res.status(500).json({ ok: false })
+        }
+        if (data.affectedRows !== 0) {
+          return res.status(200).json({ ok: true })
+        }
+        return res.status(500).json({ ok: false })
+      }
+    )
+  })
 
 module.exports = router
