@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/DanteFragapane/project-2-starter#readme",
   "dependencies": {
-    "cookie-parser": "^1.4.4",
     "dotenv": "^8.0.0",
     "express": "4.17.1",
     "express-handlebars": "^3.1.0",
