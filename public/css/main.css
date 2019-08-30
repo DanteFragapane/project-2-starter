@@ -2,8 +2,7 @@
 
 * {
   box-sizing: border-box;
-  @import url ('href="https://fonts.googleapis.com/css?family=Orbitron|Raleway&display=swap');
-
+  font-family: 'Raleway', 'Orbitron', sans-serif;
 }
 
 body {
@@ -11,7 +10,7 @@ body {
   font-size: 18px;
   line-height: 34px;
   background-repeat: no-repeat;
-  background: url("../img/cool.png") no-repeat center center fixed; 
+  background: url("../img/cool.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -27,21 +26,21 @@ h1 {
 
 h2 {
   font-family: "Orbitron", sans-serif;
-    font-weight: 700;
-    font-size: 30px;
-    color: rgb(0, 221, 210);
-    line-height: 49px;
-    float: left;
-    width: 200px;
-    height: 45px;
-    line-height: 50px;
-    text-align: center;
-  }
+  font-weight: 700;
+  font-size: 30px;
+  color: rgb(0, 221, 210);
+  line-height: 49px;
+  float: left;
+  width: 200px;
+  height: 45px;
+  line-height: 50px;
+  text-align: center;
+}
 
-  h3 {
-    font-family: "Orbitron", sans-serif;
-    font-size: xx-large;
-  }
+h3 {
+  font-family: "Orbitron", sans-serif;
+  font-size: xx-large;
+}
 
 .h5 {
   font-family: "Orbitron", sans-serif;
@@ -51,7 +50,7 @@ h2 {
 p {
   margin-bottom: 20px;
   font-weight: 700;
-} 
+}
 
 .container {
   width: 100%;
@@ -78,14 +77,14 @@ p {
   background: rgba(0, 0, 0, 0.7);
   color: rgb(0, 221, 210);
   height: 525px;
-}  
+}
 
 #enemy-card {
-  animation-duration: 2.5s
+  animation-duration: 2.5s;
 }
 
 #player-card {
-  animation-duration: 2.5s
+  animation-duration: 2.5s;
 }
 
 .card-log {
@@ -98,7 +97,7 @@ p {
   color: rgb(0, 221, 210);
   height: 525px;
   width: 525px;
-} 
+}
 
 .vs {
   width: 68%;
@@ -142,7 +141,7 @@ p {
   justify-content: center;
   margin-top: 20px;
   animation-delay: 1s;
-  animation-duration: 2s
+  animation-duration: 2s;
 }
 
 button {
@@ -154,7 +153,12 @@ button:hover {
   background-color: transparent;
 }
 
-#skill-01, #skill-02, #skill-03, #skill-04, #skill-05, #skill-06 {
+#skill-01,
+#skill-02,
+#skill-03,
+#skill-04,
+#skill-05,
+#skill-06 {
   width: 100px;
   margin: 15px;
 }
