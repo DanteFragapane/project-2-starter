@@ -37,13 +37,16 @@ router
     req.connection.query('SELECT * FROM users WHERE username = ?', req.body.username, (err, data) => {
       if (err) {
         console.error(err)
-        return res.status(500).json({ ok: false })
+        return res.status(500).send(false)
       }
       // Do the comparison for the passwords
+      if (!req.body.userpword) {
+        return res.status(401).send(false)
+      }
       bcrypt.compare(req.body.userpword, data[0].userpword, (err, bool) => {
         if (err) {
           console.error(err)
-          return res.status(500).json({ ok: false })
+          return res.status(500).send(false)
         }
         // Good login
         if (bool) {
