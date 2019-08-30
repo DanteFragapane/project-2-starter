@@ -1,23 +1,24 @@
 import Human from './human.js'
 
-//const dante = new Human('Dante')
-
-console.log(dante.mirvGrenade())
+const player = new Human('Dante')
 
 // Combat engine
 $(document).ready(function () {
+  function updateStats () {
+    $('#player-card-text')
+  }
+
   function theFight () {
     $('#skill-01').click(function () {
       console.log('skill-01')
+      const damage = player.kineticBlade()
+      if (damage !== 0) {
+        $('#battle-log-text').html(`You engaged the ROCKET KICK against your enemy for ${player.rocketKick()} damage!`)
+      } else {
+        $('#battle-log-text').html("You don't have enough energy for that!")
+      }
+      updateStats()
     })
-
-    $("#skill-01").click(function () {
-        console.log("skill-01");
-     
-       $("#battle-log-text").html("You engaged the ROCKET KICK against " + "enemy for" + human.rocketKick() +" damage")
-
-        
-    });
 
     $('#skill-04').click(function () {
       console.log('skill-04')

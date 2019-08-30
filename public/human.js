@@ -21,7 +21,7 @@ export default class Human extends Character {
   }
 
   kineticBlade () {
-    if (this.energy > 0) {
+    if (this.energy !== 0) {
       this.energy--
       return getRandomInt(3, 4)
     }
