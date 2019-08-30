@@ -1,6 +1,6 @@
-const Character = require('./character.js')
+import { Character, getRandomInt } from './character.js'
 
-class Cyborg extends Character.Character {
+export default class Cyborg extends Character.Character {
   constructor (
     name,
     stats = {
@@ -26,13 +26,13 @@ class Cyborg extends Character.Character {
   }
 
   impactHands () {
-    return Character.getRandomInt(2, 4)
+    return getRandomInt(2, 4)
   }
 
   criticalMassSpear () {
     if (this.energy > 0) {
       this.energy -= 1
-      return Character.getRandomInt(3, 4)
+      return getRandomInt(3, 4)
     }
     return 0
   }
@@ -40,7 +40,7 @@ class Cyborg extends Character.Character {
   lockOnLaser () {
     if (this.energy > 1) {
       this.energy -= 2
-      return Character.getRandomInt(1, 7)
+      return getRandomInt(1, 7)
     }
     return 0
   }
@@ -48,12 +48,7 @@ class Cyborg extends Character.Character {
   sonicBlast () {
     if (this.energy > 2) {
       this.energy -= 3
-      return (
-        Character.getRandomInt(1, 2) *
-        Character.getRandomInt(1, 2) *
-        Character.getRandomInt(1, 2) *
-        (this.constitution / 4)
-      )
+      return getRandomInt(1, 2) * getRandomInt(1, 2) * getRandomInt(1, 2) * (this.constitution / 4)
     }
     return 0
   }
@@ -73,5 +68,3 @@ class Cyborg extends Character.Character {
     }
   }
 }
-
-module.exports = Cyborg

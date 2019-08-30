@@ -1,6 +1,6 @@
-const Character = require('./character.js')
+import { Character, getRandomInt } from './character.js'
 
-class Machine extends Character.Character {
+export default class Machine extends Character.Character {
   constructor (
     name,
     stats = {
@@ -29,13 +29,13 @@ class Machine extends Character.Character {
   }
 
   heavyMetalPileDriver () {
-    return Character.getRandomInt(2, 4)
+    return getRandomInt(2, 4)
   }
 
   grappleArmDropkick () {
     if (this.energy > 0) {
       this.energy--
-      return Character.getRandomInt(3, 4)
+      return getRandomInt(3, 4)
     }
     return 0
   }
@@ -43,7 +43,7 @@ class Machine extends Character.Character {
   railGun () {
     if (this.energy > 1) {
       this.energy -= 2
-      return Character.getRandomInt(2, 7)
+      return getRandomInt(2, 7)
     }
     return 0
   }
@@ -51,9 +51,7 @@ class Machine extends Character.Character {
   pistonJab () {
     if (this.energy > 2) {
       this.energy -= 3
-      return (
-        Character.getRandomInt(1, 2) * Character.getRandomInt(1, 2) * Character.getRandomInt(1, 2) * (this.strength / 4)
-      )
+      return getRandomInt(1, 2) * getRandomInt(1, 2) * getRandomInt(1, 2) * (this.strength / 4)
     }
     return 0
   }
@@ -72,5 +70,3 @@ class Machine extends Character.Character {
     }
   }
 }
-
-module.exports = Machine

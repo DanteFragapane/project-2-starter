@@ -1,5 +1,5 @@
 // Main Class
-class Character {
+export class Character {
   constructor (name, stats) {
     this.name = name
     this.strength = stats.strength
@@ -63,10 +63,8 @@ class Character {
 }
 
 // Helper function for random integers
-function getRandomInt (min, max) {
+export function getRandomInt (min, max) {
   min = Math.ceil(min)
   max = Math.floor(max)
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
-
-module.exports = { Character, getRandomInt }

@@ -1,6 +1,6 @@
-const Character = require('./character.js')
+import { Character, getRandomInt } from './character.js'
 
-class Human extends Character.Character {
+export default class Human extends Character {
   constructor (name, stats = { strength: 2, constitution: 2, dexterity: 4, intelligence: 5, wisdom: 5, utility: 4 }) {
     super(name, stats)
     this.descriptions = {
@@ -9,7 +9,7 @@ class Human extends Character.Character {
         'Default skill. Drawing this sword from its sheath charges it with elemental energy before attacking foes.',
       scopeShot:
         "Uses sniper pistol to target enemy's weak points for a chance to do massive damage. Doesn’t always work.",
-      mervGrenade: 'Grenade that separates into a cluster of 3 smaller grenades upon impact. Scales with Utility.',
+      mirvGrenade: 'Grenade that separates into a cluster of 3 smaller grenades upon impact. Scales with Utility.',
       orbitalStrike:
         'Paint your target with a beacon and watch as Command rains down hellfire from an orbital satellite.',
       stimInjection: 'Amphetamine injection delivery system capable of healing Human character for continued fighting. '
@@ -17,13 +17,13 @@ class Human extends Character.Character {
   }
 
   rocketKick () {
-    return Character.getRandomInt(2, 4)
+    return getRandomInt(2, 4)
   }
 
   kineticBlade () {
     if (this.energy > 0) {
       this.energy--
-      return Character.getRandomInt(3, 4)
+      return getRandomInt(3, 4)
     }
     return 0
   }
@@ -31,17 +31,15 @@ class Human extends Character.Character {
   scopeShot () {
     if (this.energy > 1) {
       this.energy -= 2
-      return Character.getRandomInt(1, 7)
+      return getRandomInt(1, 7)
     }
     return 0
   }
 
-  mervGrenade () {
+  mirvGrenade () {
     if (this.energy > 2) {
       this.energy -= 3
-      return (
-        Character.getRandomInt(1, 2) * Character.getRandomInt(1, 2) * Character.getRandomInt(1, 2) * (this.utility / 4)
-      )
+      return getRandomInt(1, 2) * getRandomInt(1, 2) * getRandomInt(1, 2) * (this.utility / 4)
     }
     return 0
   }
@@ -62,5 +60,3 @@ class Human extends Character.Character {
     return 0
   }
 }
-
-module.exports = Human

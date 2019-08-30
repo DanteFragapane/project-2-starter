@@ -1,7 +1,7 @@
-const Character = require('./character.js')
+import { Character, getRandomInt } from './character.js'
 
-class Alien extends Character.Character {
-  constructor(
+export default class Alien extends Character {
+  constructor (
     name,
     stats = {
       strength: 2,
@@ -27,40 +27,35 @@ class Alien extends Character.Character {
     }
   }
 
-  forceWave() {
-    return Character.getRandomInt(2, 4)
+  forceWave () {
+    return getRandomInt(2, 4)
   }
 
-  telekeneticProjectiles() {
+  telekeneticProjectiles () {
     if (this.energy > 0) {
       this.energy--
-      return Character.getRandomInt(3, 4)
+      return getRandomInt(3, 4)
     }
     return 0
   }
 
-  cognitiveShock() {
+  cognitiveShock () {
     if (this.energy > 1) {
       this.energy -= 2
-      return Character.getRandomInt(1, 7)
+      return getRandomInt(1, 7)
     }
     return 0
   }
 
-  psiScream() {
+  psiScream () {
     if (this.energy > 2) {
       this.energy -= 3
-      return (
-        Character.getRandomInt(1, 2) *
-        Character.getRandomInt(1, 2) *
-        Character.getRandomInt(1, 2) *
-        (this.intelligence / 4)
-      )
+      return getRandomInt(1, 2) * getRandomInt(1, 2) * getRandomInt(1, 2) * (this.intelligence / 4)
     }
     return 0
   }
 
-  orbitalSingularity() {
+  orbitalSingularity () {
     if (this.energy > 5) {
       this.energy -= 6
       return 8 * (this.wisdom / 4)
@@ -68,7 +63,7 @@ class Alien extends Character.Character {
     return 0
   }
 
-  psychicRegen() {
+  psychicRegen () {
     if (this.energy > 2) {
       this.energy -= 3
       return -5 * (this.utility / 2)
@@ -76,4 +71,3 @@ class Alien extends Character.Character {
     return 0
   }
 }
-module.exports = Alien
