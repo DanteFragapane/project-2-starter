@@ -1,6 +1,6 @@
 import { Character, getRandomInt } from './character.js'
 
-export default class Machine extends Character.Character {
+export default class Machine extends Character {
   constructor (
     name,
     stats = {

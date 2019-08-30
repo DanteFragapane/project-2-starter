@@ -1,6 +1,6 @@
 import { Character, getRandomInt } from './character.js'
 
-export default class Cyborg extends Character.Character {
+export default class Cyborg extends Character {
   constructor (
     name,
     stats = {
