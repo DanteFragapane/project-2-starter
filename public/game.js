@@ -1,6 +1,6 @@
 import Human from './human.js'
 
-const dante = new Human('Dante')
+//const dante = new Human('Dante')
 
 console.log(dante.mirvGrenade())
 
@@ -11,13 +11,13 @@ $(document).ready(function () {
       console.log('skill-01')
     })
 
-    $('#skill-02').click(function () {
-      console.log('skill-02')
-    })
+    $("#skill-01").click(function () {
+        console.log("skill-01");
+     
+       $("#battle-log-text").html("You engaged the ROCKET KICK against " + "enemy for" + human.rocketKick() +" damage")
 
-    $('#skill-03').click(function () {
-      console.log('skill-03')
-    })
+        
+    });
 
     $('#skill-04').click(function () {
       console.log('skill-04')
