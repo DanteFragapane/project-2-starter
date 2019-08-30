@@ -66,7 +66,7 @@ export default class Alien extends Character {
   psychicRegen () {
     if (this.energy > 2) {
       this.energy -= 3
-      return 5 * (this.utility / 2)
+      return 3 * (this.utility / 2)
     }
     return 0
   }

@@ -66,7 +66,7 @@ export default class Machine extends Character.Character {
   repairBots () {
     if (this.energy > 2) {
       this.energy -= 3
-      return 5 * (this.constitution / 2)
+      return 3 * (this.constitution / 2)
     }
   }
 }
