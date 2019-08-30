@@ -125,6 +125,18 @@ p {
   margin-top: 10px;
 }
 
+#battle-log-text-02 {
+  font-family: "Raleway", sans-serif;
+  text-align: left;
+  margin-top: 10px;
+}
+
+#battle-log-text-03 {
+  font-family: "Raleway", sans-serif;
+  text-align: left;
+  margin-top: 10px;
+}
+
 .player-level {
   background-color: blue;
   padding: 10px;
