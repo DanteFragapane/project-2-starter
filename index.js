@@ -3,6 +3,7 @@ const path = require('path')
 const express = require('express')
 const exphbs = require('express-handlebars')
 const db = require('./db')
+const session = require('express-session')
 const htmlRoutes = require('./routes/html')
 const apiRoutes = require('./routes/api')
 
@@ -13,6 +14,15 @@ app
   .engine('handlebars', exphbs({ defaultLayout: 'main' }))
   .set('view engine', 'handlebars')
   .use(db)
+  // Initialize the session middleware
+  .use(
+    session({
+      name: 'RPG',
+      secret: 'keyboard cat',
+      resave: false,
+      saveUninitialized: true
+    })
+  )
   .use(express.urlencoded({ extended: false }))
   .use(express.json())
   .use(express.static(path.join(__dirname, 'public')))
