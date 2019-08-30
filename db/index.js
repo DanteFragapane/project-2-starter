@@ -2,9 +2,10 @@ const mysql = require('mysql')
 
 const opts = process.env.JAWSDB_URL || {
   host: 'localhost',
+  port: 3306,
   user: 'root',
   password: 'password',
-  database: 'rpg_game_db'
+  database: 'project2_db'
 }
 
 const connection = mysql.createConnection(opts)

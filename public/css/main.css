@@ -80,6 +80,14 @@ p {
   height: 525px;
 }  
 
+#enemy-card {
+  animation-duration: 2.5s
+}
+
+#player-card {
+  animation-duration: 2.5s
+}
+
 .card-log {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 10px;
@@ -132,6 +140,9 @@ p {
 
 .btn-toolbar {
   justify-content: center;
+  margin-top: 20px;
+  animation-delay: 1s;
+  animation-duration: 2s
 }
 
 button {
@@ -139,6 +150,11 @@ button {
   border: none;
 }
 
+button:hover {
+  background-color: transparent;
+}
+
 #skill-01, #skill-02, #skill-03, #skill-04, #skill-05, #skill-06 {
   width: 100px;
+  margin: 15px;
 }

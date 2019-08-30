@@ -10,28 +10,68 @@ const router = express.Router()
 router
   .post('/user/create', (req, res) => {
     // Do the hash
-    bcrypt
-      .hash(req.body.password, saltRounds, (err, hash) => {
-        if (err) console.error(err)
-        // Make the query to create a user
-        req.connection.query(
-          'INSERT INTO users VALUES ?',
-          { username: req.body.username, userpword: hash, charactername: req.body.characterName },
-          (err, data) => {
-            if (err) console.error(err)
-            if (data.affectedRows !== 0) {
-              return res.status(200)
-            }
-            return res.status(500)
+    return bcrypt.hash(req.body.userpword, saltRounds, (err, hash) => {
+      if (err) {
+        console.error(err)
+        return res.status(500).json({ OK: false })
+      }
+      // Make the query to create a user
+      req.connection.query(
+        'INSERT INTO users (username, userpword, charactername) VALUES (?, ?, ?)',
+        [ req.body.username, hash, req.body.characterName ],
+        (err, data) => {
+          if (err) {
+            console.error(err)
+            return res.status(500).json({ OK: false })
           }
-        )
+          console.log(data)
+          if (data.affectedRows === 1) {
+            return res.status(200).json({ OK: true })
+          }
+          return res.status(500).json({ OK: false })
+        }
+      )
+    })
+  })
+  .post('/user/login', (req, res) => {
+    req.connection.query('SELECT * FROM users WHERE username = ?', req.body.username, (err, data) => {
+      if (err) {
+        console.error(err)
+        return res.status(500).json({ ok: false })
+      }
+      // Do the comparison for the passwords
+      bcrypt.compare(req.body.userpword, data[0].userpword, (err, bool) => {
+        if (err) {
+          console.error(err)
+          return res.status(500).json({ ok: false })
+        }
+        // Good login
+        if (bool) {
+          return res.status(200).send(true)
+        }
+        // Bad login
+        return res.status(401).send(false)
       })
-      .then((data) => {
-        if (data) res.redirect('/')
-      })
+    })
   })
   .post('/api/attack/:attackName', (req, res) => {
     console.log(req.attackName)
+  })
+  .post('/api/commitStats', (req, res) => {
+    req.connection.query(
+      'UPDATE users SET characterlevel = ? characterxp = ?',
+      [ req.body.characterlevel, req.body.characterxp ],
+      (err, data) => {
+        if (err) {
+          console.error(err)
+          return res.status(500).json({ ok: false })
+        }
+        if (data.affectedRows !== 0) {
+          return res.status(200).json({ ok: true })
+        }
+        return res.status(500).json({ ok: false })
+      }
+    )
   })
 
 module.exports = router
