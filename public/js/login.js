@@ -10,6 +10,8 @@ $('form').on('submit', (event) => {
     method: 'POST',
     data: { username, userpword }
   }).then((res) => {
-    console.log(res.body)
+    if (res) {
+      window.location.replace('/game')
+    }
   })
 })
