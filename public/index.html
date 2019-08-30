@@ -6,6 +6,7 @@
   <title>Sci-fi RPG</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="css/main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -38,7 +39,7 @@
     <br>
     <br>
     <div class="card-deck">
-      <div class="card" id="player-card">
+      <div class="card animated fadeIn" id="player-card">
         <img src="img/human.jpg" class="card-img-top" alt="Player Img">
         <div class="card-body">
           <h3 class="card-title">User Name</h3>
@@ -49,7 +50,7 @@
           <h3 class="player-level">Level 1</h3>
         </div>
       </div>
-      <div class="card-log">
+      <div class="card-log animated fadeIn">
         <div class="card-body">
           <img class="vs" src="img/vs.png" alt="vs">
           <h3 class="card-title">Battle Log</h3>
@@ -59,7 +60,7 @@
           <p class="card-text" id="battle-log-text">You used Rocket Kick on Cyborg for 3 damage!</p>
         </div>
       </div>
-      <div class="card" id="enemy-card">
+      <div class="card animated fadeIn" id="enemy-card">
         <img src="img/cyborg.png" class="card-img-top" alt="Player Img">
         <div class="card-body">
           <h3 class="card-title">Cyborg</h3>
@@ -74,7 +75,7 @@
 
     <br>
 
-    <div class="btn-toolbar">
+    <div class="btn-toolbar animated fadeInUp">
       <button>
         <img src="img/humanSkills/rocket-kick.png" alt="Skill-01" id="skill-01">
       </button>
