@@ -5,7 +5,7 @@ const player = new Human('Dante')
 // Combat engine
 $(document).ready(function () {
   function updateStats () {
-    $('#player-card-text')
+    $('#player-card-text').html(`Energy: ${player.energy}`)
   }
 
   function theFight () {
