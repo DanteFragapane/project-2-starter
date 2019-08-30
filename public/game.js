@@ -4,8 +4,10 @@ const player = new Human('Dante')
 
 // Combat engine
 $(document).ready(function () {
+  updateStats()
   function updateStats () {
-    $('#player-card-text').html(`Energy: ${player.energy}`)
+    $('#player-card-health').html(`Health: ${player.health}`)
+    $('#player-card-energy').html(`Energy: ${player.energy}`)
   }
 
   function theFight () {
