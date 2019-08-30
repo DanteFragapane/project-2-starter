@@ -1,6 +1,8 @@
 import Human from './human.js'
+import Cyborg from './cyborg.js'
 
 const player = new Human('Dante')
+const enemy = new Cyborg('Piece da Resistance')
 
 // Combat engine
 $(document).ready(function () {
@@ -8,6 +10,8 @@ $(document).ready(function () {
   function updateStats () {
     $('#player-card-health').html(`Health: ${player.health}`)
     $('#player-card-energy').html(`Energy: ${player.energy}`)
+    $('#enemy-card-health').html(`Health: ${enemy.health}`)
+    $('#enemy-card-energy').html(`Health: ${enemy.energy}`)
   }
 
   function theFight () {
@@ -22,10 +26,12 @@ $(document).ready(function () {
       updateStats()
     })
     $('#skill-02').click(function () {
-     // console.log('skill-02')
+      // console.log('skill-02')
       const damage = player.kineticBlade()
       if (damage !== 0) {
-        $('#battle-log-text').html(`You engaged the KINETIC BLADE against your enemy for ${player.kineticBlade()} damage!`)
+        $('#battle-log-text').html(
+          `You engaged the KINETIC BLADE against your enemy for ${player.kineticBlade()} damage!`
+        )
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
@@ -42,12 +48,13 @@ $(document).ready(function () {
       updateStats()
     })
 
-
     $('#skill-04').click(function () {
       //console.log('skill-04')
       const damage = player.mirvGrenade()
       if (damage !== 0) {
-        $('#battle-log-text').html(`You engaged the MIRV GRENADE against your enemy for ${player.mirvGrenade()} damage!`)
+        $('#battle-log-text').html(
+          `You engaged the MIRV GRENADE against your enemy for ${player.mirvGrenade()} damage!`
+        )
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
@@ -57,8 +64,10 @@ $(document).ready(function () {
     $('#skill-05').click(function () {
       //console.log('skill-05')
       const damage = player.orbitalStrike()
-      if (damage !==0) {
-        $('#battle-log-text').html('You engaged the ORBITAL STRIKE against your enemy for ${player.orbitalStrike()} damage!')
+      if (damage !== 0) {
+        $('#battle-log-text').html(
+          'You engaged the ORBITAL STRIKE against your enemy for ${player.orbitalStrike()} damage!'
+        )
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
@@ -68,8 +77,10 @@ $(document).ready(function () {
     $('#skill-06').click(function () {
       //console.log('skill-06')
       const damage = player.stimInjection()
-      if (damage !==0) {
-        $('#battle-log-text').html('You engaged the STIM INJECTION to recover some health for ${player.stimInjection()} points reovered!')
+      if (damage !== 0) {
+        $('#battle-log-text').html(
+          'You engaged the STIM INJECTION to recover some health for ${player.stimInjection()} points reovered!'
+        )
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
