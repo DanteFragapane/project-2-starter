@@ -64,7 +64,7 @@ export default class Cyborg extends Character.Character {
   naniteRepair () {
     if (this.energy > 2) {
       this.energy -= 3
-      return -5
+      return 5 * (this.strength / 2)
     }
   }
 }
