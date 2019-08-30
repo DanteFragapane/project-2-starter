@@ -4,4 +4,12 @@ $('form').on('submit', (event) => {
   const username = $('#username').val().trim()
   const userpword = $('#userpword').val().trim()
   console.log(username, userpword)
+
+  $.ajax({
+    url: '/user/login',
+    method: 'POST',
+    data: { username, userpword }
+  }).then((res) => {
+    console.log(res.body)
+  })
 })
