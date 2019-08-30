@@ -20,9 +20,11 @@ $(document).ready(function () {
       const damage = player.rocketKick()
       if (damage !== 0) {
         $('#battle-log-text').html(`You engaged the ROCKET KICK against your enemy for ${player.rocketKick()} damage!`)
+          enemy.health -= player.rocketKick
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
+      enemyMove()
       updateStats()
     })
     $('#skill-02').click(function () {
@@ -30,21 +32,25 @@ $(document).ready(function () {
       const damage = player.kineticBlade()
       if (damage !== 0) {
         $('#battle-log-text').html(
-          `You engaged the KINETIC BLADE against your enemy for ${player.kineticBlade()} damage!`
+          `You engaged the KINETIC BLADE against your enemy for ${player.kineticBlade()} damage!'
+          enemy.health -= player.kineticBlade
         )
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
+      enemyMove()
       updateStats()
     })
     $('#skill-03').click(function () {
       //console.log('skill-03')
       const damage = player.scopeShot()
       if (damage !== 0) {
-        $('#battle-log-text').html(`You engaged the SCOPE SHOT against your enemy for ${player.scopeShot()} damage!`)
+        $('#battle-log-text').html('You engaged the SCOPE SHOT against your enemy for ${player.scopeShot()} damage!`)
+        enemy.health -= player.scopeShot
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
+      enemyMove()
       updateStats()
     })
 
@@ -53,11 +59,12 @@ $(document).ready(function () {
       const damage = player.mirvGrenade()
       if (damage !== 0) {
         $('#battle-log-text').html(
-          `You engaged the MIRV GRENADE against your enemy for ${player.mirvGrenade()} damage!`
-        )
-      } else {
+          `You engaged the MIRV GRENADE against your enemy for ${player.mirvGrenade()} damage!`)
+          enemy.health -= player.mirvGrenade
+        } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
+      enemyMove()
       updateStats()
     })
 
@@ -65,12 +72,12 @@ $(document).ready(function () {
       //console.log('skill-05')
       const damage = player.orbitalStrike()
       if (damage !== 0) {
-        $('#battle-log-text').html(
-          'You engaged the ORBITAL STRIKE against your enemy for ${player.orbitalStrike()} damage!'
-        )
-      } else {
+        $('#battle-log-text').html('You engaged the ORBITAL STRIKE against your enemy for ${player.orbitalStrike()} damage!')
+          enemy.health -= player.rocketKick
+        } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
+      enemyMove()
       updateStats()
     })
 
@@ -79,14 +86,18 @@ $(document).ready(function () {
       const damage = player.stimInjection()
       if (damage !== 0) {
         $('#battle-log-text').html(
-          'You engaged the STIM INJECTION to recover some health for ${player.stimInjection()} points reovered!'
-        )
+          'You engaged the STIM INJECTION to recover some health for ${player.stimInjection()} points reovered!')
+          player.health += player.stimInjection
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
+      enemyMove()
       updateStats()
     })
   }
-
+  function enemyMove(){
+    // If enemy health is half or less => prioritize healing!
+    
+  }
   theFight()
 })
