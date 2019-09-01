@@ -10,7 +10,20 @@ router
     res.render('signup')
   })
   .get('/game', (_, res) => {
-    res.render('game')
+    if (_.session && _.sessionID) {
+      _.connection.query(
+        'SELECT charactername, characterlevel, characterxp, charactertype FROM users WHERE cookie = ?',
+        _.sessionID,
+        (err, data) => {
+          if (err) {
+            console.error(err)
+            return res.status(500).json({ ok: false })
+          }
+          console.log(data[0])
+          res.render('game', { player: data[0] })
+        }
+      )
+    }
   })
 
 module.exports = router
