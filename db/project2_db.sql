@@ -5,11 +5,12 @@ CREATE TABLE users
   (50) PRIMARY KEY UNIQUE NOT NULL,
   userpword TEXT NOT NULL,
   charactername VARCHAR
-  (100),
+  (100) NOT NULL,
   characterlevel INT
   (5),
   characterxp INT
   (10),
   charactertype VARCHAR
-  (25)
+  (25),
+  cookie TEXT
 );

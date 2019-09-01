@@ -39,8 +39,11 @@ router
         console.error(err)
         return res.status(500).send(false)
       }
+      if (!data[0]) {
+        return res.status(401).send(false)
+      }
       // Do the comparison for the passwords
-      if (!req.body.userpword) {
+      if (req.body.userpword === undefined || req.body.userpword === null) {
         return res.status(401).send(false)
       }
       bcrypt.compare(req.body.userpword, data[0].userpword, (err, bool) => {
@@ -50,7 +53,23 @@ router
         }
         // Good login
         if (bool) {
-          return res.status(200).send(true)
+          // If they could login, we know that their username is in the table. I don't need to worry about that.
+          return req.connection.query(
+            'UPDATE users SET cookie = ?  WHERE username = ?',
+            [ req.sessionID, req.body.username ],
+            (err, data) => {
+              // If I couldn't apply cookie in the table, error.
+              if (err) {
+                console.error(err)
+                return res.status(500).send(false)
+              }
+              if (data.affectedRows === 0) {
+                return res.status(500).send(false)
+              }
+              // If that worked, respond with good login
+              return res.status(200).send(true)
+            }
+          )
         }
         // Bad login
         return res.status(401).send(false)
