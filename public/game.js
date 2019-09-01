@@ -69,7 +69,7 @@ $(document).ready(function () {
       console.log('skill-05')
       const damage = player.orbitalStrike()
       if (damage !== 0) {
-        $('#battle-log-text').html('You engaged the ORBITAL STRIKE against your enemy for ${player.orbitalStrike()} damage!')
+        $('#battle-log-text').html(`You engaged the ORBITAL STRIKE against your enemy for ${player.orbitalStrike()} damage!`)
           enemy.health -= player.rocketKick
         } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
@@ -83,7 +83,7 @@ $(document).ready(function () {
       const damage = player.stimInjection()
       if (damage !== 0) {
         $('#battle-log-text').html(
-          'You engaged the STIM INJECTION to recover some health for ${player.stimInjection()} points reovered!')
+          `You engaged the STIM INJECTION to recover some health for ${player.stimInjection()} points reovered!`)
           player.health += player.stimInjection
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
@@ -94,7 +94,9 @@ $(document).ready(function () {
   }
   function enemyMove(){
     // If enemy health is half or less => prioritize healing!
+       }
+
     
-  }
-  theFight()
+  
+  theFight();
 })
