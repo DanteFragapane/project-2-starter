@@ -174,3 +174,55 @@ button:hover {
   width: 100px;
   margin: 15px;
 }
+
+.login-box {
+  text-align: center;
+  margin-top: 80px;
+  padding: 150px;
+  padding-top: 230px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  animation-duration: 2.5s;
+}
+
+label {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  color: rgb(0, 221, 210);
+  margin: 70px auto;
+}
+
+.login-title {
+font-size: 75px;
+}
+
+input {
+  border-radius: 10px;
+}
+
+.submit-btn {
+  font-family: "Raleway", sans-serif;
+  margin-left: 10px;
+  font-weight: 700;
+  color: rgb(0, 221, 210);
+  border-color: 5px solid rgb(0, 221, 210);
+  background-color: #1d494b;
+
+}
+
+.userpword {
+  margin-left: 20px;
+}
+
+.usernamebox {
+  width: 300px;
+}
+
+.pwbox {
+  width: 300px;
+}
+
+
+
