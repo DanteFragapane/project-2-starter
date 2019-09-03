@@ -24,6 +24,7 @@ router
         }
       )
     }
+    return res.status(401).json({ ok: false })
   })
 
 module.exports = router
