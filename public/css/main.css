@@ -202,7 +202,7 @@ input {
   border-radius: 10px;
 }
 
-.submit-btn {
+.login-btn {
   font-family: "Raleway", sans-serif;
   margin-left: 10px;
   font-weight: 700;
@@ -223,6 +223,47 @@ input {
 .pwbox {
   width: 300px;
 }
+
+.signup-box {
+  text-align: center;
+  margin-top: 80px;
+  padding: 125px;
+  padding-top: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  animation-duration: 2.5s;
+}
+
+.signup-title {
+  font-size: 75px;
+  margin-bottom: 67px;
+  margin-top: -35px;
+}
+
+.submit-btn {
+  font-family: "Raleway", sans-serif;
+  margin-left: 10px;
+  font-weight: 700;
+  color: rgb(0, 221, 210);
+  border-color: 5px solid rgb(0, 221, 210);
+  background-color: #1d494b;
+}
+
+.submit-btn-div {
+  text-align: left;
+  margin-top: 35px;
+}
+
+.form-control {
+  margin-top: 25px;
+}
+
+.signup-title {
+  font-size: 75px;
+  }
+
 
 
 
