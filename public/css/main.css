@@ -227,7 +227,7 @@ input {
 .signup-box {
   text-align: center;
   margin-top: 80px;
-  padding: 125px;
+  padding: 65px;
   padding-top: 200px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   background: rgb(0, 0, 0);
@@ -263,6 +263,14 @@ input {
 .signup-title {
   font-size: 75px;
   }
+
+.link-text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(0, 221, 210);
+  margin-top: 15px;
+}
 
 
 
