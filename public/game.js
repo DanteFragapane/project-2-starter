@@ -87,7 +87,7 @@ $(document).ready(function () {
     $('#skill-06').click(function () {
       console.log('skill-06')
       const heal = player.stimInjection()
-      if (damage !== 0) {
+      if (heal !== 0) {
         $('#battle-log-text').html(
           `You engaged the STIM INJECTION to recover some health for ${player.stimInjection()} points reovered!`
         )
