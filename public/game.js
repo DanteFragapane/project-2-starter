@@ -7,6 +7,16 @@ const enemy = new Machine('Piece da Resistance')
 // Combat engine
 $(document).ready(function () {
   updateStats()
+  commitStats()
+
+  function commitStats () {
+    $.ajax({
+      url: '/api/commitStats',
+      method: 'POST',
+      data: player
+    })
+  }
+
   function updateStats () {
     $('#player-card-health').html(`Health: ${player.health}`)
     $('#player-card-energy').html(`Energy: ${player.energy}`)
