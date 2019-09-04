@@ -1,6 +1,6 @@
 import Human from './human.js'
 import Cyborg from './cyborg.js'
-import { ENGINE_METHOD_PKEY_ASN1_METHS } from 'constants';
+//import { ENGINE_METHOD_PKEY_ASN1_METHS } from 'constants';
 
 const player = new Human('Dante')
 const enemy = new Cyborg('Piece da Resistance')
@@ -110,8 +110,12 @@ $(document).ready(function () {
   function enemyMove () {
     // If enemy health is half or less => prioritize healing!
     if (enemy.health <= enemy.maxHealth /2){
-      enemy.health += repairBots ();
+      var addHealth = machine.repairBots();
+      enemy.health += addHealth;
+      $('#battle-log-text-02').html("Your enemy healed for" + addHealth+ " points health!")
+
     } else{
+      
 
     }
 
