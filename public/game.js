@@ -1,9 +1,8 @@
 import Human from './human.js'
 import Machine from './machine.js'
 
-
 const player = new Human('Dante')
-const enemy = new Cyborg('Piece da Resistance')
+const enemy = new Machine('Piece da Resistance')
 
 // Combat engine
 $(document).ready(function () {
@@ -21,10 +20,9 @@ $(document).ready(function () {
       const damage = player.rocketKick()
       if (damage !== 0) {
         $('#battle-log-text').html(`You engaged the ROCKET KICK against your enemy for ${player.rocketKick()} damage!`)
-        enemy.health -= damage;
-        if (enemy.health <= 0 ){
-          $('#battle-log-text-03').html('You have defeated your enemy!!');
-          
+        enemy.health -= damage
+        if (enemy.health <= 0) {
+          $('#battle-log-text-03').html('You have defeated your enemy!!')
         }
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
@@ -83,7 +81,6 @@ $(document).ready(function () {
         )
         enemy.health -= damage
         if (enemy.health <= 0) {
-
         }
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
@@ -109,16 +106,12 @@ $(document).ready(function () {
   }
   function enemyMove () {
     // If enemy health is half or less => prioritize healing!
-    if (enemy.health <= enemy.maxHealth /2){
-      var addHealth = machine.repairBots();
-      enemy.health += addHealth;
-      $('#battle-log-text-02').html("Your enemy healed for" + addHealth+ " points health!")
-
-    } else{
-
-
+    if (enemy.health <= enemy.maxHealth / 2) {
+      const addHealth = enemy.repairBots()
+      enemy.health += addHealth
+      $('#battle-log-text-02').html('Your enemy healed for' + addHealth + ' points health!')
+    } else {
     }
-
   }
 
   theFight()

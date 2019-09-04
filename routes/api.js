@@ -17,8 +17,8 @@ router
       }
       // Make the query to create a user
       req.connection.query(
-        'INSERT INTO users (username, userpword, charactername, charactertype, cookie) VALUES (?, ?, ?, ?, ?)',
-        [ req.body.username, hash, req.body.characterName, req.body.characterType, req.sessionID ],
+        'INSERT INTO users (username, userpword, charactername, characterlevel, characterxp, charactertype, cookie) VALUES (?, ?, ?, ?, ?, ?, ?)',
+        [ req.body.username, hash, req.body.charactername, 1, 0, req.body.charactertype, req.sessionID ],
         (err, data) => {
           if (err) {
             console.error(err)

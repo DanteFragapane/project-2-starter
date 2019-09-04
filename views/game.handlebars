@@ -25,12 +25,12 @@
     <div class="card animated fadeIn" id="player-card">
       <img src="img/human.jpg" class="card-img-top" alt="Player Img">
       <div class="card-body">
-        <h3 class="card-title">User Name</h3>
+        <h3 class="card-title">{{player.charactername}}</h3>
         <h5 class="card-text" id="player-card-health">Health: 4</h5>
         <h5 class="card-text" id="player-card-energy">Energy: 2</h5>
       </div>
       <div class="card-footer">
-        <h3 class="player-level">Level 1</h3>
+        <h3 class="player-level">Level {{player.characterlevel}}</h3>
       </div>
     </div>
     <div class="card-log animated fadeIn">
@@ -45,12 +45,12 @@
     <div class="card animated fadeIn" id="enemy-card">
       <img src="img/cyborg.png" class="card-img-top" alt="Player Img">
       <div class="card-body">
-        <h3 class="card-title">Cyborg</h3>
+        <h3 class="card-title">Machine</h3>
         <h5 class="card-text" id="enemy-card-health">Health: 4</h5>
         <h5 class="card-text" id="enemy-card-energy">Energy: 2</h5>
       </div>
       <div class="card-footer">
-        <h3 class="enemy-level">Level 3</h3>
+        <h3 class="enemy-level">Level {{enemy.characterlevel}}</h3>
       </div>
     </div>
   </div>
