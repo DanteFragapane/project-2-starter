@@ -33,7 +33,7 @@ export default class Machine extends Character {
   }
 
   grappleArmDropkick () {
-    if (this.energy > 0) {
+    if (this.energy >= 1) {
       this.energy--
       return getRandomInt(3, 4)
     }
@@ -41,7 +41,7 @@ export default class Machine extends Character {
   }
 
   railGun () {
-    if (this.energy > 1) {
+    if (this.energy >= 2) {
       this.energy -= 2
       return getRandomInt(2, 7)
     }
@@ -49,7 +49,7 @@ export default class Machine extends Character {
   }
 
   pistonJab () {
-    if (this.energy > 2) {
+    if (this.energy >= 3) {
       this.energy -= 3
       return getRandomInt(1, 2) * getRandomInt(1, 2) * getRandomInt(1, 2) * (this.strength / 4)
     }
@@ -57,14 +57,14 @@ export default class Machine extends Character {
   }
 
   deathbringer () {
-    if (this.energy > 5) {
+    if (this.energy >= 6) {
       this.energy -= 6
       return 8 * (this.dexterity / 4)
     }
   }
 
   repairBots () {
-    if (this.energy > 2) {
+    if (this.energy >= 3) {
       this.energy -= 3
       return 3 * (this.constitution / 2)
     }

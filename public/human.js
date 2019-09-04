@@ -21,7 +21,7 @@ export default class Human extends Character {
   }
 
   kineticBlade () {
-    if (this.energy > 0) {
+    if (this.energy >= 1) {
       this.energy--
       return getRandomInt(3, 4)
     }
@@ -29,7 +29,7 @@ export default class Human extends Character {
   }
 
   scopeShot () {
-    if (this.energy >= 1) {
+    if (this.energy >= 2) {
       this.energy -= 2
       return getRandomInt(1, 7)
     }
@@ -37,7 +37,7 @@ export default class Human extends Character {
   }
 
   mirvGrenade () {
-    if (this.energy >= 2) {
+    if (this.energy >= 3) {
       this.energy -= 3
       return getRandomInt(1, 2) * getRandomInt(1, 2) * getRandomInt(1, 2) * (this.utility / 4)
     }
@@ -45,7 +45,7 @@ export default class Human extends Character {
   }
 
   orbitalStrike () {
-    if (this.energy >= 5) {
+    if (this.energy >= 6) {
       this.energy -= 6
       return 8 * (this.intelligence / 4)
     }
@@ -53,7 +53,7 @@ export default class Human extends Character {
   }
 
   stimInjection () {
-    if (this.energy >= 2) {
+    if (this.energy >= 3) {
       this.energy -= 3
       return 3 * (this.intelligence / 2)
     }

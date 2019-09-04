@@ -30,7 +30,7 @@ export default class Cyborg extends Character {
   }
 
   criticalMassSpear () {
-    if (this.energy > 0) {
+    if (this.energy >= 1) {
       this.energy -= 1
       return getRandomInt(3, 4)
     }
@@ -38,7 +38,7 @@ export default class Cyborg extends Character {
   }
 
   lockOnLaser () {
-    if (this.energy > 1) {
+    if (this.energy >= 2) {
       this.energy -= 2
       return getRandomInt(1, 7)
     }
@@ -46,7 +46,7 @@ export default class Cyborg extends Character {
   }
 
   sonicBlast () {
-    if (this.energy > 2) {
+    if (this.energy >= 3) {
       this.energy -= 3
       return getRandomInt(1, 2) * getRandomInt(1, 2) * getRandomInt(1, 2) * (this.constitution / 4)
     }
@@ -54,7 +54,7 @@ export default class Cyborg extends Character {
   }
 
   nuclearBattery () {
-    if (this.energy > 5) {
+    if (this.energy >= 6) {
       this.energy -= 6
       return 8 * (this.dexterity / 4)
     }
@@ -62,7 +62,7 @@ export default class Cyborg extends Character {
   }
 
   naniteRepair () {
-    if (this.energy > 2) {
+    if (this.energy >= 3) {
       this.energy -= 3
       return 3 * (this.strength / 2)
     }

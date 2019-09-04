@@ -32,7 +32,7 @@ export default class Alien extends Character {
   }
 
   telekeneticProjectiles () {
-    if (this.energy > 0) {
+    if (this.energy >= 1) {
       this.energy--
       return getRandomInt(3, 4)
     }
@@ -40,7 +40,7 @@ export default class Alien extends Character {
   }
 
   cognitiveShock () {
-    if (this.energy > 1) {
+    if (this.energy >= 2) {
       this.energy -= 2
       return getRandomInt(1, 7)
     }
@@ -48,7 +48,7 @@ export default class Alien extends Character {
   }
 
   psiScream () {
-    if (this.energy > 2) {
+    if (this.energy >= 3) {
       this.energy -= 3
       return getRandomInt(1, 2) * getRandomInt(1, 2) * getRandomInt(1, 2) * (this.intelligence / 4)
     }
@@ -56,7 +56,7 @@ export default class Alien extends Character {
   }
 
   orbitalSingularity () {
-    if (this.energy > 5) {
+    if (this.energy >= 6) {
       this.energy -= 6
       return 8 * (this.wisdom / 4)
     }
