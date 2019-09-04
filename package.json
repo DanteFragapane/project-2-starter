@@ -15,17 +15,22 @@
     "url": "git+https://github.com/DanteFragapane/project-2-starter.git"
   },
   "keywords": [],
-  "author": "Dante Fragapane",
+  "author": "Tony Romaniuk, Dante Fragapane, Richard Dimbo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/DanteFragapane/project-2-starterissues"
   },
   "homepage": "https://github.com/DanteFragapane/project-2-starter#readme",
   "dependencies": {
-    "dotenv": "8.0.0",
-    "ejs": "2.6.2",
+    "bcrypt": "^3.0.6",
+    "dotenv": "^8.0.0",
     "express": "4.17.1",
-    "mysql": "2.17.1"
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.16.2",
+    "fs": "0.0.1-security",
+    "mysql": "2.17.1",
+    "require": "^2.4.20",
+    "rot": "^0.1.0"
   },
   "devDependencies": {
     "nodemon": "1.19.1",

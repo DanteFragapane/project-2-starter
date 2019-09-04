@@ -1,0 +1,84 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
+  <a class="navbar-brand" id="logo"><strong>
+      <h1>Sci-fi RPG</h1>
+    </strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br>
+<br>
+
+<div class="container">
+  <br>
+  <br>
+  <div class="card-deck">
+    <div class="card animated fadeIn" id="player-card">
+      <img src="img/human.jpg" class="card-img-top" alt="Player Img">
+      <div class="card-body">
+        <h3 class="card-title">{{player.charactername}}</h3>
+        <h5 class="card-text" id="player-card-health">Health: 4</h5>
+        <h5 class="card-text" id="player-card-energy">Energy: 2</h5>
+      </div>
+      <div class="card-footer">
+        <h3 class="player-level">Level {{player.characterlevel}}</h3>
+      </div>
+    </div>
+    <div class="card-log animated fadeIn">
+      <div class="card-body">
+        <img class="vs" src="img/vs.png" alt="vs">
+        <h3 class="card-title">Battle Log</h3>
+        <p class="card-text" id="battle-log-text">Player text here</p>
+        <p class="card-text" id="battle-log-text-02">Enemy text here</p>
+        <p class="card-text" id="battle-log-text-03">Win or loss text here</p>
+      </div>
+    </div>
+    <div class="card animated fadeIn" id="enemy-card">
+      <img src="img/cyborg.png" class="card-img-top" alt="Player Img">
+      <div class="card-body">
+        <h3 class="card-title">Machine</h3>
+        <h5 class="card-text" id="enemy-card-health">Health: 4</h5>
+        <h5 class="card-text" id="enemy-card-energy">Energy: 2</h5>
+      </div>
+      <div class="card-footer">
+        <h3 class="enemy-level">Level {{enemy.characterlevel}}</h3>
+      </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="btn-toolbar animated fadeInUp">
+    <button>
+      <img src="img/humanSkills/rocket-kick.png" alt="Skill-01" id="skill-01">
+    </button>
+    <button>
+      <img src="img/humanSkills/kinetic-blade.png" alt="Skill-02" id="skill-02">
+    </button>
+    <button>
+      <img src="img/humanSkills/scope-shot.png" alt="Skill-03" id="skill-03">
+    </button>
+    <button>
+      <img src="img/humanSkills/mirv-grenade.png" alt="Skill-04" id="skill-04">
+    </button>
+    <button>
+      <img src="img/humanSkills/orbital-strike.png" alt="Skill-05" id="skill-05">
+    </button>
+    <button>
+      <img src="img/humanSkills/stim-injection.png" alt="Skill-06" id="skill-06">
+    </button>
+  </div>
+</div>
+
+<br>
+
+<script type="module" src="./game.js"></script>
