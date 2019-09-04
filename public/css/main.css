@@ -151,7 +151,7 @@ p {
 
 .btn-toolbar {
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 60px;
   animation-delay: 1s;
   animation-duration: 2s;
 }
@@ -161,8 +161,19 @@ button {
   border: none;
 }
 
-button:hover {
+.btn {
   background-color: transparent;
+  border: none;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: none;
+}
+
+.btn:focus {
+  background-color: transparent;
+  border: none;
 }
 
 #skill-01,
@@ -272,6 +283,23 @@ input {
   margin-top: 15px;
 }
 
+div.click-to-top span {
+  display: none; 
+  position: absolute; 
+  bottom: 155px; 
+  left: 0; 
+  right: 0; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
 
-
-
+div.click-to-top:hover span {
+  display: block; 
+  font-family: "Raleway", sans-serif;
+  color: rgb(0, 221, 210);
+  font-weight: 700;
+  font-size: 20px;
+  padding: 10px;
+}
