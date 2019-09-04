@@ -23,8 +23,9 @@ router
           res.render('game', { player: data[0] })
         }
       )
+    } else {
+      return res.status(401).json({ ok: false })
     }
-    return res.status(401).json({ ok: false })
   })
 
 module.exports = router
