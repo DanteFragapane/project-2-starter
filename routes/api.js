@@ -80,8 +80,8 @@ router
   })
   .post('/api/commitStats', (req, res) => {
     req.connection.query(
-      'UPDATE users SET characterlevel = ? characterxp = ?',
-      [ req.body.characterlevel, req.body.characterxp ],
+      'UPDATE users SET characterlevel = ?, characterxp = ? WHERE cookie = ?',
+      [ req.body.level, req.body.experience, req.sessionID ],
       (err, data) => {
         if (err) {
           console.error(err)
