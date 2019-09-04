@@ -61,6 +61,7 @@ export default class Machine extends Character {
       this.energy -= 6
       return 8 * (this.dexterity / 4)
     }
+    return 0
   }
 
   repairBots () {
@@ -68,5 +69,6 @@ export default class Machine extends Character {
       this.energy -= 3
       return 3 * (this.constitution / 2)
     }
+    return 0
   }
 }
