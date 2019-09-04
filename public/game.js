@@ -1,5 +1,6 @@
 import Human from './human.js'
 import Cyborg from './cyborg.js'
+import { ENGINE_METHOD_PKEY_ASN1_METHS } from 'constants';
 
 const player = new Human('Dante')
 const enemy = new Cyborg('Piece da Resistance')
@@ -20,7 +21,11 @@ $(document).ready(function () {
       const damage = player.rocketKick()
       if (damage !== 0) {
         $('#battle-log-text').html(`You engaged the ROCKET KICK against your enemy for ${player.rocketKick()} damage!`)
-        enemy.health -= damage
+        enemy.health -= damage;
+        if (enemy.health <= 0 ){
+          $('#battle-log-text-03').html('You have defeated your enemy!!');
+          
+        }
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
@@ -77,6 +82,9 @@ $(document).ready(function () {
           `You engaged the ORBITAL STRIKE against your enemy for ${player.orbitalStrike()} damage!`
         )
         enemy.health -= damage
+        if (enemy.health <= 0) {
+
+        }
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
       }
@@ -101,6 +109,12 @@ $(document).ready(function () {
   }
   function enemyMove () {
     // If enemy health is half or less => prioritize healing!
+    if (enemy.health <= enemy.maxHealth /2){
+      enemy.health += repairBots ();
+    } else{
+
+    }
+
   }
 
   theFight()
