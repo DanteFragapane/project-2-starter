@@ -1,6 +1,6 @@
 import Human from './human.js'
-import Cyborg from './cyborg.js'
-//import { ENGINE_METHOD_PKEY_ASN1_METHS } from 'constants';
+import Machine from './machine.js'
+
 
 const player = new Human('Dante')
 const enemy = new Cyborg('Piece da Resistance')
@@ -115,7 +115,7 @@ $(document).ready(function () {
       $('#battle-log-text-02').html("Your enemy healed for" + addHealth+ " points health!")
 
     } else{
-      
+
 
     }
 
