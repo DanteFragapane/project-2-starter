@@ -19,7 +19,6 @@ router
             console.error(err)
             return res.status(500).json({ ok: false })
           }
-          console.log(data[0])
           res.render('game', { player: data[0] })
         }
       )
