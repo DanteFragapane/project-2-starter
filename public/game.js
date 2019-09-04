@@ -6,8 +6,6 @@ const enemy = new Machine('Piece da Resistance')
 
 // Combat engine
 $(document).ready(function () {
-  updateStats()
-
   function commitStats () {
     $.ajax({
       url: '/api/commitStats',
@@ -22,6 +20,9 @@ $(document).ready(function () {
     $('#enemy-card-health').html(`Health: ${enemy.health}`)
     $('#enemy-card-energy').html(`Energy: ${enemy.energy}`)
   }
+
+  // Go ahead and immediately update the stats on the page
+  updateStats()
 
   function theFight () {
     $('#skill-01').click(function () {
