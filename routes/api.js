@@ -80,8 +80,8 @@ router
   })
   .post('/api/commitStats', (req, res) => {
     req.connection.query(
-      'UPDATE users SET characterlevel = ? characterxp = ?',
-      [ req.body.characterlevel, req.body.characterxp ],
+      'UPDATE users SET characterlevel = ?, characterxp = ? WHERE cookie = ?',
+      [ req.body.level, req.body.experience, req.sessionID ],
       (err, data) => {
         if (err) {
           console.error(err)
@@ -90,9 +90,22 @@ router
         if (data.affectedRows !== 0) {
           return res.status(200).json({ ok: true })
         }
+        console.error(data)
         return res.status(500).json({ ok: false })
       }
     )
+  })
+  .post('/logout', (req, res) => {
+    req.connection.query('UPDATE users SET cookie = "" WHERE cookie = ?', [ req.sessionID ], (err, data) => {
+      if (err) {
+        console.error(err)
+        return res.status(500).json({ ok: false })
+      }
+      if (data.affectedRows !== 0) {
+        return res.status(200).json({ ok: true })
+      }
+      res.redirect('/')
+    })
   })
 
 module.exports = router

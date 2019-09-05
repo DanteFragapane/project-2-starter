@@ -50,7 +50,7 @@ export default class Alien extends Character {
   psiScream () {
     if (this.energy >= 3) {
       this.energy -= 3
-      return getRandomInt(1, 2) * getRandomInt(1, 2) * getRandomInt(1, 2) * (this.intelligence / 4)
+      return (getRandomInt(1, 2) + getRandomInt(1, 2) + getRandomInt(1, 2)) * (this.intelligence / 4)
     }
     return 0
   }

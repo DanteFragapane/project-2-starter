@@ -4,9 +4,9 @@ export default class Machine extends Character {
   constructor (
     name,
     stats = {
-      strength: 8,
-      constitution: 9,
-      dexterity: 6,
+      strength: 5,
+      constitution: 4,
+      dexterity: 3,
       intelligence: 4,
       widom: 2,
       utility: 3
@@ -51,7 +51,7 @@ export default class Machine extends Character {
   pistonJab () {
     if (this.energy >= 3) {
       this.energy -= 3
-      return getRandomInt(1, 2) * getRandomInt(1, 2) * getRandomInt(1, 2) * (this.strength / 4)
+      return (getRandomInt(1, 2) + getRandomInt(1, 2) + getRandomInt(1, 2)) * (this.strength / 4)
     }
     return 0
   }
@@ -61,6 +61,7 @@ export default class Machine extends Character {
       this.energy -= 6
       return 8 * (this.dexterity / 4)
     }
+    return 0
   }
 
   repairBots () {
@@ -68,5 +69,6 @@ export default class Machine extends Character {
       this.energy -= 3
       return 3 * (this.constitution / 2)
     }
+    return 0
   }
 }

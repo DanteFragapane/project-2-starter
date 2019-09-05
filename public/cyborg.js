@@ -48,7 +48,7 @@ export default class Cyborg extends Character {
   sonicBlast () {
     if (this.energy >= 3) {
       this.energy -= 3
-      return getRandomInt(1, 2) * getRandomInt(1, 2) * getRandomInt(1, 2) * (this.constitution / 4)
+      return (getRandomInt(1, 2) + getRandomInt(1, 2) + getRandomInt(1, 2)) * (this.constitution / 4)
     }
     return 0
   }
