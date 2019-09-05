@@ -52,14 +52,6 @@ export class Character {
     this.experience += 300
     this.experiencePerKill = this.experience / 2
   }
-
-  decreaseHealth (amt) {
-    this.health -= amt
-    if (this.health <= 0) {
-      return true
-    }
-    return false
-  }
 }
 
 // Helper function for random integers
