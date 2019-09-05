@@ -90,6 +90,7 @@ router
         if (data.affectedRows !== 0) {
           return res.status(200).json({ ok: true })
         }
+        console.error(data)
         return res.status(500).json({ ok: false })
       }
     )
