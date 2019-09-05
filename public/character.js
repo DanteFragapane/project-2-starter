@@ -9,7 +9,7 @@ export class Character {
     this.wisdom = stats.wisdom
     this.utility = stats.utility
     this.level = 1
-    this.maxEnergy = 3
+    this.maxEnergy = 5
     this.energy = this.maxEnergy
     this.maxHealth = 30
     this.health = this.maxHealth
