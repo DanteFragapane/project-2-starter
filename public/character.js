@@ -11,7 +11,7 @@ export class Character {
     this.level = 1
     this.maxEnergy = 3
     this.energy = this.maxEnergy
-    this.maxHealth = 8
+    this.maxHealth = 30
     this.health = this.maxHealth
     this.experience = 0
 
@@ -47,7 +47,7 @@ export class Character {
     this.level++
     this.maxEnergy++
     if (this.level % 2 !== 0) {
-      this.maxHealth++
+      this.maxHealth += 2
     }
     this.experience += 300
     this.experiencePerKill = this.experience / 2
