@@ -19,7 +19,9 @@ router
             console.error(err)
             return res.status(500).json({ ok: false })
           }
-          res.render('game', { player: data[0] })
+          if (data[0]) {
+            res.render('game', { player: data[0] })
+          } else res.redirect('/')
         }
       )
     } else {

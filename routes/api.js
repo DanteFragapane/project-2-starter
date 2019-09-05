@@ -94,5 +94,17 @@ router
       }
     )
   })
+  .post('/logout', (req, res) => {
+    req.connection.query('UPDATE users SET cookie = "" WHERE cookie = ?', [ req.sessionID ], (err, data) => {
+      if (err) {
+        console.error(err)
+        return res.status(500).json({ ok: false })
+      }
+      if (data.affectedRows !== 0) {
+        return res.status(200).json({ ok: true })
+      }
+      res.redirect('/')
+    })
+  })
 
 module.exports = router
