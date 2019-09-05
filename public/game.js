@@ -17,10 +17,18 @@ $(document).ready(function () {
   // Immediately update the stats on the page
   updateStats()
 
+  function resetStats () {
+    enemy.health = enemy.maxHealth
+    enemy.energy = enemy.maxEnergy
+    player.health = player.maxHealth
+    player.energy = player.maxEnergy
+  }
+
   function enemyDies () {
     $('#battle-log-text-03').html('Congratulations!! You have vanquished your foe!!')
     player.levelUp()
     commitStats()
+    resetStats()
     updateStats()
     theFight()
   }
@@ -29,6 +37,8 @@ $(document).ready(function () {
     $('#battle-log-text-03').html('You have been defeated!!')
     player.health = 0
     player.energy = 0
+    commitStats()
+    resetStats()
     updateStats()
     theFight()
   }
