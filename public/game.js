@@ -1,11 +1,14 @@
 import Human from './human.js'
 import Machine from './machine.js'
 
-const player = new Human('Dante')
-const enemy = new Machine('Piece da Resistance')
+const player = new Human("Stalker")
+const enemy = new Machine("Fer-de-Lance")
 
 // Combat engine
 $(document).ready(function () {
+  updateStats()
+  player.energy +=2
+  enemy.energy +=2
   function commitStats () {
     $.ajax({
       url: '/api/commitStats',
@@ -15,16 +18,15 @@ $(document).ready(function () {
   }
 
   function updateStats () {
+
+  commitStats()
     $('#player-card-health').html(`Health: ${player.health}`)
     $('#player-card-energy').html(`Energy: ${player.energy}`)
     $('#enemy-card-health').html(`Health: ${enemy.health}`)
     $('#enemy-card-energy').html(`Energy: ${enemy.energy}`)
   }
 
-  // Go ahead and immediately update the stats on the page
-  updateStats()
-
-  function theFight () {
+  function theFight() {
     $('#skill-01').click(function () {
       console.log('skill-01')
       const damage = player.rocketKick()
@@ -91,6 +93,7 @@ $(document).ready(function () {
         )
         enemy.health -= damage
         if (enemy.health <= 0) {
+          enemyDies()
         }
       } else {
         $('#battle-log-text').html("You don't have enough energy for that!")
@@ -114,15 +117,47 @@ $(document).ready(function () {
       updateStats()
     })
   }
-  function enemyMove () {
+
+  function enemyMove() {
     // If enemy health is half or less => prioritize healing!
-    if (enemy.health <= enemy.maxHealth / 2) {
-      const addHealth = enemy.repairBots()
-      enemy.health += addHealth
-      $('#battle-log-text-02').html('Your enemy healed for' + addHealth + ' points health!')
-    } else {
-    }
+    if (enemy.health <= enemy.maxHealth / 2 && enemy.energy >= 3) {
+      const addHealth = enemy.repairBots();
+      enemy.health += addHealth;
+      console.log("+health " + addHealth)
+      $('#battle-log-text-02').html("Your enemy healed for" + addHealth + " points health!")
+    } else
+
+      // If enemy.energy >=6 then deathbringer
+      if (enemy.energy >= 6) {
+        const damage = enemy.deathbringer()
+        $('#battle-log-text-02').html("Your Enemy slashed your for " + damage + " of damage")
+        console.log("death " + damage)
+        player.health -= damage
+      }
+    else
+      // If enemy.energy >=3 then pistonjab
+      if (enemy.energy >= 3) {
+        const damage = enemy.pistonJab()
+
+        $('#battle-log-text-02').html("Your Enemy pummelled you for " + damage + " of damage")
+        player.health -= damage
+        console.log("piston " + damage)
+      }
+    else
+      // If enemy.energy >= 2 then railgun
+      if (enemy.energy >= 2) {
+        const damage = enemy.railGun()
+        $('#battle-log-text-02').html("Your Enemy blasted you for " + damage + " of damage")
+        console.log("RG " + damage)
+        player.health -= damage
+      }
   }
 
+
+
+  function enemyDies() {
+    $('#battle-log-text-03').html("Congratulations!! You have vanquished your foe!!")
+    console.log(progression.json)
+  }
   theFight()
 })
