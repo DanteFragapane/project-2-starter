@@ -148,8 +148,8 @@ $(document).ready(function () {
     })
 
     function enemyMove () {
-      // If enemy health is half or less => prioritize healing!
-      if (enemy.health <= enemy.maxHealth / 2 && enemy.energy >= 3) {
+      // If enemy health is one-quarter or less => prioritize healing!
+      if (enemy.health <= enemy.maxHealth / 4 && enemy.energy >= 3) {
         const addHealth = enemy.repairBots()
         enemy.health += addHealth
         console.log('+health ' + addHealth)
