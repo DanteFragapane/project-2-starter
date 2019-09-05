@@ -19,11 +19,17 @@ $(document).ready(function () {
 
   function enemyDies () {
     $('#battle-log-text-03').html('Congratulations!! You have vanquished your foe!!')
+    player.levelUp()
+    commitStats()
+    updateStats()
   }
 
   function playerLoses () {
     $('#battle-log-text-03').html('You have been defeated!!')
+    player.health = 0
+    player.energy = 0
     updateStats()
+    theFight()
   }
 
   function commitStats () {
