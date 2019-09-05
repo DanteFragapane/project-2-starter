@@ -20,7 +20,8 @@ app
       name: 'RPG',
       secret: 'keyboard cat',
       resave: false,
-      saveUninitialized: true
+      saveUninitialized: true,
+      cookie: { maxAge: 3600000 }
     })
   )
   .use(express.urlencoded({ extended: false }))

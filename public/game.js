@@ -22,6 +22,7 @@ $(document).ready(function () {
     player.levelUp()
     commitStats()
     updateStats()
+    theFight()
   }
 
   function playerLoses () {
