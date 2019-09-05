@@ -5,12 +5,12 @@ const player = new Human('Stalker')
 const enemy = new Machine('Fer-de-Lance')
 
 // If the logout button is clicked
-$('#logout').click(
+$('#logout').on('click', (event) => {
   $.ajax({
     url: '/logout',
     method: 'POST'
   })
-)
+})
 
 // Combat engine
 $(document).ready(function () {
