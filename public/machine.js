@@ -4,9 +4,9 @@ export default class Machine extends Character {
   constructor (
     name,
     stats = {
-      strength: 8,
-      constitution: 9,
-      dexterity: 6,
+      strength: 5,
+      constitution: 4,
+      dexterity: 3,
       intelligence: 4,
       widom: 2,
       utility: 3
