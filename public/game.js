@@ -29,17 +29,13 @@ $(document).ready(function () {
     player.levelUp()
     commitStats()
     resetStats()
-    updateStats()
     theFight()
   }
 
   function playerLoses () {
     $('#battle-log-text-03').html('You have been defeated!!')
-    player.health = 0
-    player.energy = 0
     commitStats()
     resetStats()
-    updateStats()
     theFight()
   }
 
